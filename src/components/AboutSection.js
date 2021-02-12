@@ -1,33 +1,34 @@
 import home1 from '../img/home1.png';
+import { AboutContainer, Description, Hide, Image } from '../styles';
 
 function AboutSection() {
     return (
-        <div className="about-section">
-            <div className="description">
+        <AboutContainer>
+            <Description>
 
                 <div className="title">
-                    <div className="hide">
+                    <Hide>
                         <h2>We work to make</h2>
-                    </div>
+                    </Hide>
 
-                    <div className="hide">
+                    <Hide>
                         <h2>your <span>dreams</span> come</h2>
-                    </div>
+                    </Hide>
 
-                    <div className="hide">
+                    <Hide>
                         <h2>true.</h2>
-                    </div>
+                    </Hide>
                 </div>
 
                 <p>Contact us for any photography or videography ideas that you have. We have profesionals with amazing skills.</p>
                 <button>Contact us</button>
-            </div>
+            </Description>
 
-            <div className="image">
+            <Image>
                 <img src={home1} alt="home-image" />
-            </div>
+            </Image>
 
-        </div>
+        </AboutContainer>
     );
 }
 
