@@ -1,10 +1,20 @@
+//Styled
+import styled from 'styled-components';
+//Animations
+import { motion } from 'framer-motion';
+import { pageAnimation } from '../animation';
+
 
 function Contact() {
     return (
-        <div className="contact-section">
+        <ContactContainer variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <h1>Contact</h1>
-        </div>
+        </ContactContainer>
     );
 }
 
 export default Contact;
+
+const ContactContainer = styled(motion.div)`
+    background: #fff;
+`;

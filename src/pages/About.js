@@ -2,17 +2,20 @@
 import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
 import FaqSection from '../components/FaqSection';
+//Animations
+import { motion } from 'framer-motion';
+import { pageAnimation } from '../animation';
 
 
 function About() {
     return (
-        <div className="about">
+        <motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit" className="about">
 
             <AboutSection />
             <ServicesSection />
             <FaqSection />
 
-        </div>
+        </motion.div>
     );
 }
 

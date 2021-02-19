@@ -8,6 +8,9 @@ import { useHistory } from 'react-router-dom';
 import MovieService from '../MovieService';
 //Components
 import Award from '../components/Award';
+//Animations
+import { motion } from 'framer-motion';
+import { pageAnimation } from '../animation';
 
 function MovieDetail() {
 
@@ -34,7 +37,7 @@ function MovieDetail() {
 
     return (
 
-        <MovieDetailContainer>
+        <MovieDetailContainer variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <HeadLine>
                 <h2>{movie.title}</h2>
                 <img src={movie.img} alt={movie.title} />
@@ -65,7 +68,7 @@ function MovieDetail() {
 export default MovieDetail;
 
 
-const MovieDetailContainer = styled.div`
+const MovieDetailContainer = styled(motion.div)`
     color: #fff;
 `;
 
