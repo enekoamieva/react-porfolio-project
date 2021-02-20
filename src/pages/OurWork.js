@@ -31,7 +31,6 @@ function OurWork() {
                     />
                 )
             }
-
         </WorkContainer>
     );
 }
@@ -43,6 +42,10 @@ const WorkContainer = styled(motion.div)`
     overflow: hidden;
     padding: 5rem 10rem;
     background: #fff;
+    
+    @media(max-width: 1200px) {
+        padding: 2rem 2rem;
+    }
 `;
 
 //Frame Animation

@@ -1,8 +1,9 @@
+import { motion } from 'framer-motion';
 //Styled
 import styled from 'styled-components';
 
 //Styled Components
-export const AboutContainer = styled.div`
+export const AboutContainer = styled(motion.div)`
     min-height: 90vh;
     display: flex;
     flex-flow: row wrap;
@@ -10,6 +11,12 @@ export const AboutContainer = styled.div`
     justify-content: space-between;
     padding: 5rem 10rem;
     color: #fff;
+
+    @media(max-width: 1200px) {
+        display: block;
+        padding: 2rem 2rem;
+        text-align: center;
+    }
 `;
 
 export const Description = styled.div`
@@ -19,6 +26,11 @@ export const Description = styled.div`
 
     h2 {
         font-weight: lighter;
+    }
+
+    @media(max-width: 1200px) {
+        padding: 0;
+        margin-bottom: 4rem;
     }
 `;
 

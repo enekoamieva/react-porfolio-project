@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-size: 62.5%; /* Now 10px = 1rem! */
     }
+    
     *, *:before, *:after {
         box-sizing: inherit;
     }
@@ -23,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
         line-height: 1.5; /* a nice line-height */
         background: #1b1b1b;
         font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
     }
 
     button {

@@ -1,17 +1,23 @@
+//Animations
+import { fade } from '../animation';
 //Icons
 import clock from '../img/clock.svg';
 import diaphragm from '../img/diaphragm.svg';
 import money from '../img/money.svg';
 import teamwork from '../img/teamwork.svg';
 import home2 from '../img/home2.png';
-
 //Styled
 import styled from 'styled-components';
 import { AboutContainer, Description, Image } from '../styles';
+//Use Scroll Hook
+import { UseScrollHook } from './UseScrollHook';
 
 function ServicesSection() {
+
+    const [element, controls] = UseScrollHook();
+
     return (
-        <ServicesContainer>
+        <ServicesContainer variants={fade} animate={controls} initial='hidden' ref={element}>
             <Description>
 
                 <h2>High <span>quality</span> services</h2>
@@ -69,20 +75,18 @@ const ServicesContainer = styled(AboutContainer)`
         width: 70%;
         padding: 2rem 0 4rem 0;
     }
+
 `;
 
 const Cards = styled.div`
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
 `;
 
 const Card = styled.div`
     flex-basis: calc(50% - 20px);
-
-    @media(max-width: 1050px) {
-        flex-basis: calc(100% - 20px);    
-    }
-    
 
     .icon {
         width: 100%;

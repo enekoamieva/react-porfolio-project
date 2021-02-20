@@ -2,6 +2,7 @@
 import GlobalStyle from './components/GlobalStyle';
 //Components
 import Nav from './components/Nav';
+import ScrollTop from './components/ScrollTop';
 //Pages
 import About from './pages/About';
 import OurWork from './pages/OurWork';
@@ -45,6 +46,8 @@ function App() {
 
                 </Switch>
             </AnimatePresence>
+
+            <ScrollTop />
 
         </div>
     );

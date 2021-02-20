@@ -1,43 +1,51 @@
 //Styled
 import styled from 'styled-components';
 import { AboutContainer } from '../styles';
+import { AnimateSharedLayout } from 'framer-motion';
+
+import Toggle from './Toggle';
+import { fade } from '../animation';
+//Use Scroll Hook
+import { UseScrollHook } from './UseScrollHook';
 
 function FaqSection() {
+
+    const [element, controls] = UseScrollHook();
+
     return (
-        <FaqContainer>
+        <FaqContainer variants={fade} animate={controls} initial='hidden' ref={element}>
             <h2>Any Questions <span>FAQ</span></h2>
 
-            <div className="question">
-                <h4>How Do I Start?</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vel delectus omnis facere perspiciatis placeat, aspernatur nihil dicta adipisci, cumque sunt illum, quae ullam tempora ipsa! Maiores dolore excepturi exercitationem!</p>
-                </div>
-            </div>
-            <div className="faq-line"></div>
+            <div className="faqs">
 
-            <div className="question">
-                <h4>Daily Schedule</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vel delectus omnis facere perspiciatis placeat, aspernatur nihil dicta adipisci, cumque sunt illum, quae ullam tempora ipsa! Maiores dolore excepturi exercitationem!</p>
-                </div>
-            </div>
-            <div className="faq-line"></div>
+                <AnimateSharedLayout>
+                    <Toggle title='How Do I Start?'>
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vel delectus omnis facere perspiciatis placeat, aspernatur nihil dicta adipisci, cumque sunt illum, quae ullam tempora ipsa! Maiores dolore excepturi exercitationem!</p>
+                        </div>
+                    </Toggle>
 
-            <div className="question">
-                <h4>Diferent Payment Methods</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vel delectus omnis facere perspiciatis placeat, aspernatur nihil dicta adipisci, cumque sunt illum, quae ullam tempora ipsa! Maiores dolore excepturi exercitationem!</p>
-                </div>
-            </div>
-            <div className="faq-line"></div>
 
-            <div className="question">
-                <h4>What products do you offer</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vel delectus omnis facere perspiciatis placeat, aspernatur nihil dicta adipisci, cumque sunt illum, quae ullam tempora ipsa! Maiores dolore excepturi exercitationem!</p>
-                </div>
+                    <Toggle title='Daily Schedule'>
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vel delectus omnis facere perspiciatis placeat, aspernatur nihil dicta adipisci, cumque sunt illum, quae ullam tempora ipsa! Maiores dolore excepturi exercitationem!</p>
+                        </div>
+                    </Toggle>
+
+                    <Toggle title='Diferent Payment Methods'>
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vel delectus omnis facere perspiciatis placeat, aspernatur nihil dicta adipisci, cumque sunt illum, quae ullam tempora ipsa! Maiores dolore excepturi exercitationem!</p>
+                        </div>
+                    </Toggle>
+
+                    <Toggle title='What products do you offe'>
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vel delectus omnis facere perspiciatis placeat, aspernatur nihil dicta adipisci, cumque sunt illum, quae ullam tempora ipsa! Maiores dolore excepturi exercitationem!</p>
+                        </div>
+                    </Toggle>
+                </AnimateSharedLayout>
+
             </div>
-            <div className="faq-line"></div>
 
         </FaqContainer>
     );
@@ -48,31 +56,31 @@ export default FaqSection;
 const FaqContainer = styled(AboutContainer)`
 
     span {
-        display: block;
+                        display: block;
     }
 
     h2 {
-        padding-bottom: 2rem;
+                        padding - bottom: 2rem;
         font-weight: lighter;
     }
 
     .faq-line {
-        background: #ccc;
+                        background: #ccc;
         height: 0.2rem;
         margin: 2rem 0rem;
         width: 100%;
     }
 
     .question {
-        padding: 3rem 0;
+                        padding: 3rem 0;
         cursor: pointer;
     }
 
     .answer {
-        padding: 2rem 0;
+                        padding: 2rem 0;
 
         p {
-            padding: 1rem 0;
+                        padding: 1rem 0;
         }
     }
 
